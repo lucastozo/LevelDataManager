@@ -25,10 +25,6 @@ namespace levelDataManager
 
         private void LoadData()
         {
-            //string json = File.ReadAllText(levelDataPath);
-            //data = JsonConvert.DeserializeObject<List<LevelData>>(json);
-            //RefreshData();
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "JSON files (*.json)|*.json";
             openFileDialog.Title = "Selecione o arquivo leveldata.json";
@@ -37,7 +33,8 @@ namespace levelDataManager
             {
                 string jsonFilePath = openFileDialog.FileName;
                 string json = File.ReadAllText(jsonFilePath);
-                data = JsonConvert.DeserializeObject<List<LevelData>>(json);
+                LevelDataContainer container = JsonConvert.DeserializeObject<LevelDataContainer>(json);
+                data = container.Data;
                 RefreshData();
             }
         }

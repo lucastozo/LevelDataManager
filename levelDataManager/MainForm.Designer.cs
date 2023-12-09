@@ -90,7 +90,7 @@
             this.btSaveFile.Name = "btSaveFile";
             this.btSaveFile.Size = new System.Drawing.Size(168, 60);
             this.btSaveFile.TabIndex = 3;
-            this.btSaveFile.Text = "Salvar Arquivo";
+            this.btSaveFile.Text = "Salvar JSON";
             this.btSaveFile.UseVisualStyleBackColor = false;
             this.btSaveFile.Click += new System.EventHandler(this.btSaveFile_Click);
             // 
@@ -103,7 +103,7 @@
             this.btLoadFile.Name = "btLoadFile";
             this.btLoadFile.Size = new System.Drawing.Size(168, 26);
             this.btLoadFile.TabIndex = 4;
-            this.btLoadFile.Text = "Carregar Arquivo";
+            this.btLoadFile.Text = "Carregar JSON";
             this.btLoadFile.UseVisualStyleBackColor = false;
             this.btLoadFile.Click += new System.EventHandler(this.btLoadFile_Click);
             // 
