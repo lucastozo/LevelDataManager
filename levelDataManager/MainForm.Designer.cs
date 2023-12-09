@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dtlevelData = new System.Windows.Forms.DataGridView();
             this.btNewLevel = new System.Windows.Forms.Button();
             this.btDeleteLevel = new System.Windows.Forms.Button();
@@ -155,10 +156,10 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dtlevelData);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Data Level Manager";
+            this.Text = "Level Data Manager";
             ((System.ComponentModel.ISupportInitialize)(this.dtlevelData)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
