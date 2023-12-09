@@ -102,7 +102,12 @@ namespace levelDataManager
             try
             {
                 List<LevelData> data = (List<LevelData>)dtlevelData.DataSource;
-                string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+                var dataWithTimestamp = new
+                {
+                    GeradoEm = DateTime.Now.ToString(),
+                    Data = data
+                };
+                string json = JsonConvert.SerializeObject(dataWithTimestamp, Formatting.Indented);
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "JSON files (*.json)|*.json";
                 saveFileDialog.Title = "Salvar arquivo JSON";
@@ -115,7 +120,7 @@ namespace levelDataManager
                     MessageBox.Show("Arquivo salvo com sucesso.", "Arquivo Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
