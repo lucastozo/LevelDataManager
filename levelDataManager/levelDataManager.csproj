@@ -104,18 +104,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LevelData.cs" />
-    <Compile Include="LevelDataContainer.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="LevelDataManager\LevelData.cs" />
+    <Compile Include="LevelDataManager\LevelDataContainer.cs" />
+    <Compile Include="LevelDataManager\LevelDataManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="LevelDataManager\LevelDataManager.Designer.cs">
+      <DependentUpon>LevelDataManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerData.cs" />
+    <Compile Include="PlayerDataContainer.cs" />
+    <Compile Include="PlayerDataManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerDataManager.Designer.cs">
+      <DependentUpon>PlayerDataManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="LevelDataManager\LevelDataManager.resx">
+      <DependentUpon>LevelDataManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerDataManager.resx">
+      <DependentUpon>PlayerDataManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PlayerDataManager\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

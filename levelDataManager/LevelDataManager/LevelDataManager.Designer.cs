@@ -1,6 +1,6 @@
 ﻿namespace levelDataManager
 {
-    partial class MainForm
+    partial class LevelDataManager
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.dtlevelData = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LevelDataManager));
+            this.dtLevelData = new System.Windows.Forms.DataGridView();
             this.btNewLevel = new System.Windows.Forms.Button();
             this.btDeleteLevel = new System.Windows.Forms.Button();
             this.btSaveFile = new System.Windows.Forms.Button();
@@ -37,23 +37,28 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btSubirPos = new System.Windows.Forms.Button();
             this.btDescerPos = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtlevelData)).BeginInit();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btPlayerDataManager = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dtLevelData)).BeginInit();
             this.panel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtlevelData
+            // dtLevelData
             // 
-            this.dtlevelData.AllowUserToAddRows = false;
-            this.dtlevelData.AllowUserToDeleteRows = false;
-            this.dtlevelData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtLevelData.AllowUserToAddRows = false;
+            this.dtLevelData.AllowUserToDeleteRows = false;
+            this.dtLevelData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtlevelData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtlevelData.Location = new System.Drawing.Point(12, 12);
-            this.dtlevelData.Name = "dtlevelData";
-            this.dtlevelData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dtlevelData.Size = new System.Drawing.Size(1066, 657);
-            this.dtlevelData.TabIndex = 0;
+            this.dtLevelData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtLevelData.Location = new System.Drawing.Point(12, 28);
+            this.dtLevelData.Name = "dtLevelData";
+            this.dtLevelData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dtLevelData.Size = new System.Drawing.Size(1070, 641);
+            this.dtLevelData.TabIndex = 0;
             // 
             // btNewLevel
             // 
@@ -149,26 +154,63 @@
             this.btDescerPos.UseVisualStyleBackColor = false;
             this.btDescerPos.Click += new System.EventHandler(this.btDescerPos_Click);
             // 
-            // MainForm
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripSeparator1,
+            this.btPlayerDataManager});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1088, 25);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(220, 22);
+            this.toolStripLabel1.Text = "PROGRAMA ATUAL: Level Data Manager";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btPlayerDataManager
+            // 
+            this.btPlayerDataManager.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btPlayerDataManager.Image = ((System.Drawing.Image)(resources.GetObject("btPlayerDataManager.Image")));
+            this.btPlayerDataManager.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btPlayerDataManager.Name = "btPlayerDataManager";
+            this.btPlayerDataManager.Size = new System.Drawing.Size(149, 22);
+            this.btPlayerDataManager.Text = "Abrir Player Data Manager";
+            this.btPlayerDataManager.Click += new System.EventHandler(this.btPlayerDataManager_Click);
+            // 
+            // LevelDataManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dtlevelData);
+            this.Controls.Add(this.dtLevelData);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainForm";
+            this.Name = "LevelDataManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Level Data Manager";
-            ((System.ComponentModel.ISupportInitialize)(this.dtlevelData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtLevelData)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtlevelData;
+        private System.Windows.Forms.DataGridView dtLevelData;
         private System.Windows.Forms.Button btNewLevel;
         private System.Windows.Forms.Button btDeleteLevel;
         private System.Windows.Forms.Button btSaveFile;
@@ -176,6 +218,10 @@
         private System.Windows.Forms.Button btSubirPos;
         private System.Windows.Forms.Button btDescerPos;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btPlayerDataManager;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

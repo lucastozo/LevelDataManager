@@ -14,10 +14,10 @@ using Microsoft.VisualBasic;
 
 namespace levelDataManager
 {
-    public partial class MainForm : Form
+    public partial class LevelDataManager : Form
     {
         List<LevelData> data;
-        public MainForm()
+        public LevelDataManager()
         {
             InitializeComponent();
             data = new List<LevelData>();
@@ -42,16 +42,18 @@ namespace levelDataManager
         private void RefreshData()
         {
             data = data.OrderBy(d => d.position_lvl).ToList();
-            dtlevelData.DataSource = null;
-            dtlevelData.DataSource = data;
-            dtlevelData.Columns["position_lvl"].ReadOnly = true;
+            dtLevelData.DataSource = null;
+            dtLevelData.DataSource = data;
+            dtLevelData.Columns["position_lvl"].ReadOnly = true;
 
-            dtlevelData.Columns["position_lvl"].HeaderText = "Posição";
-            dtlevelData.Columns["name_lvl"].HeaderText = "Nome";
-            dtlevelData.Columns["creator_lvl"].HeaderText = "Criador";
-            dtlevelData.Columns["verifier_lvl"].HeaderText = "Verificador";
-            dtlevelData.Columns["video_lvl"].HeaderText = "Link Vídeo";
-            dtlevelData.Columns["publisher_lvl"].HeaderText = "Publicador";
+            dtLevelData.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+
+            dtLevelData.Columns["position_lvl"].HeaderText = "Posição";
+            dtLevelData.Columns["name_lvl"].HeaderText = "Nome";
+            dtLevelData.Columns["creator_lvl"].HeaderText = "Criador";
+            dtLevelData.Columns["verifier_lvl"].HeaderText = "Verificador";
+            dtLevelData.Columns["video_lvl"].HeaderText = "Link Vídeo";
+            dtLevelData.Columns["publisher_lvl"].HeaderText = "Publicador";
         }
 
         private void AddLevel(LevelData newLevel)
@@ -98,7 +100,7 @@ namespace levelDataManager
         {
             try
             {
-                List<LevelData> data = (List<LevelData>)dtlevelData.DataSource;
+                List<LevelData> data = (List<LevelData>)dtLevelData.DataSource;
                 var dataWithTimestamp = new
                 {
                     GeradoEm = DateTime.Now.ToString(),
@@ -188,7 +190,7 @@ namespace levelDataManager
                 // Se o level não foi encontrado, retorne
                 if (levelToDelete == null)
                 {
-                    MessageBox.Show("Level não encontrado.");
+                    MessageBox.Show("Level não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -212,7 +214,7 @@ namespace levelDataManager
             }
             catch (FormatException)
             {
-                MessageBox.Show("Por favor, insira um número válido para a posição do level.");
+                MessageBox.Show("Por favor, insira um número válido para a posição do level.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -231,7 +233,7 @@ namespace levelDataManager
             try
             {
                 // Obtenha o índice da linha selecionada
-                int rowIndex = dtlevelData.SelectedCells[0].OwningRow.Index;
+                int rowIndex = dtLevelData.SelectedCells[0].OwningRow.Index;
 
                 // Verifique se a linha não é a primeira
                 if (rowIndex == 0)
@@ -250,7 +252,7 @@ namespace levelDataManager
                 RefreshData();
 
                 // Mantenha a linha selecionada
-                dtlevelData.Rows[rowIndex - 1].Selected = true;
+                dtLevelData.Rows[rowIndex - 1].Selected = true;
             }
             catch
             {
@@ -263,10 +265,10 @@ namespace levelDataManager
             try
             {
                 // Obtenha o índice da linha selecionada
-                int rowIndex = dtlevelData.SelectedCells[0].OwningRow.Index;
+                int rowIndex = dtLevelData.SelectedCells[0].OwningRow.Index;
 
                 // Verifique se a linha não é a última
-                if (rowIndex == dtlevelData.Rows.Count - 1)
+                if (rowIndex == dtLevelData.Rows.Count - 1)
                     return;
 
                 // Obtenha o level selecionado e o level abaixo dele
@@ -282,12 +284,24 @@ namespace levelDataManager
                 RefreshData();
 
                 // Mantenha a linha selecionada
-                dtlevelData.Rows[rowIndex + 1].Selected = true;
+                dtLevelData.Rows[rowIndex + 1].Selected = true;
             }
             catch
             {
 
             }
+        }
+
+        private void btPlayerDataManager_Click(object sender, EventArgs e)
+        {
+            PlayerDataManager frm = new PlayerDataManager();
+            frm.FormClosed += Frm_FormClosed;
+            frm.Show();
+            this.Hide();
+        }
+        private void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

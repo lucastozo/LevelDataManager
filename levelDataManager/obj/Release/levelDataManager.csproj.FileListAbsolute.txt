@@ -75,10 +75,11 @@ C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\bin\Release\Sys
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.csproj.AssemblyReference.cache
-C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.MainForm.resources
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.Properties.Resources.resources
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.csproj.GenerateResource.cache
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.csproj.CoreCompileInputs.cache
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.csproj.CopyComplete
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.exe
 C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.pdb
+C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.LevelDataManager.resources
+C:\Users\Tozo\Documents\GitHub\LevelDataManager\levelDataManager\obj\Release\levelDataManager.PlayerDataManager.resources
