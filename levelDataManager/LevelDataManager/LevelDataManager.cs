@@ -42,7 +42,7 @@ namespace levelDataManager
         private void RefreshData()
         {
             data = data.OrderBy(d => d.position_lvl).ToList();
-            dtLevelData.DataSource = null;
+            //dtLevelData.DataSource = null;
             dtLevelData.DataSource = data;
             dtLevelData.Columns["position_lvl"].ReadOnly = true;
 
@@ -54,6 +54,7 @@ namespace levelDataManager
             dtLevelData.Columns["verifier_lvl"].HeaderText = "Verificador";
             dtLevelData.Columns["video_lvl"].HeaderText = "Link Vídeo";
             dtLevelData.Columns["publisher_lvl"].HeaderText = "Publicador";
+            dtLevelData.Columns["listpct_lvl"].HeaderText = "List%";
         }
 
         private void AddLevel(LevelData newLevel)
@@ -151,16 +152,40 @@ namespace levelDataManager
             newLevel.verifier_lvl = Interaction.InputBox("Digite o verificador do level", "Adicionar Level");
             newLevel.video_lvl = Interaction.InputBox("Digite o link do vídeo do level", "Adicionar Level");
             newLevel.publisher_lvl = Interaction.InputBox("Digite o publicador do level (deixe em branco caso seja o próprio criador)", "Adicionar Level");
+            if(int.Parse(position_lvl) <= 30)
+            {
+                do
+                {
+                    string listpct = Interaction.InputBox("Digite o List% do level (apenas número)", "Adicionar Level");
+                    if (string.IsNullOrEmpty(listpct))
+                    {
+                        return;
+                    }
+                    try
+                    {
+                        newLevel.listpct_lvl = int.Parse(listpct);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
+                }while (newLevel.listpct_lvl < 0 || newLevel.listpct_lvl > 100);
+            }
 
-            string message = 
+            string message =
                      $"Você está prestes a adicionar o seguinte level:\n\n" +
                      $"Posição: {newLevel.position_lvl}\n" +
                      $"Nome: {newLevel.name_lvl}\n" +
                      $"Criador: {newLevel.creator_lvl}\n" +
                      $"Verificador: {newLevel.verifier_lvl}\n" +
                      $"Vídeo: {newLevel.video_lvl}\n" +
-                     $"Publicador: {newLevel.publisher_lvl}\n\n" +
-                     $"Adicionar?";
+                     $"Publicador: {newLevel.publisher_lvl}\n";
+            if (newLevel.listpct_lvl != null)
+            {
+                message += $"List%: {newLevel.listpct_lvl}\n\n";
+            }
+                     message += "Adicionar?";
             DialogResult result = MessageBox.Show(message, "Confirmação", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)

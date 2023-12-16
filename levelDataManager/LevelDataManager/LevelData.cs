@@ -14,5 +14,6 @@ namespace levelDataManager
         public string verifier_lvl { get; set; }
         public string video_lvl { get; set; }
         public string publisher_lvl { get; set; }
+        public int? listpct_lvl { get; set; }
     }
 }
