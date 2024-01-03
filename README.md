@@ -1,1 +1,1 @@
-This repository has been replaced by an improved version of this program, please go to https://github.com/lucastozo/ListDataManager-web
+This program has been replaced by an improved web version, please go to https://github.com/lucastozo/ListDataManager-web
